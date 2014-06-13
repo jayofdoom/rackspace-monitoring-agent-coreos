@@ -1,0 +1,7 @@
+[Service]
+ExecStart=/usr/bin/systemd-nspawn -D /opt/rackspace-monitoring-agent --share-system --capability=all --bind=/sys:/sys --bind=/dev:/dev --bind=/dev/pts:/dev/pts --bind=/usr/share/oem:/mnt --user=root --keep-unit /usr/bin/rackspace-monitoring-agent -l /var/log/rackspace-monitoring-agent.log --exit-on-upgrade
+Restart=always
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
