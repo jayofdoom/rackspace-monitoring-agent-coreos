@@ -10,8 +10,11 @@ https://github.com/openstack/ironic-python-agent do.
 2) Extract the container to /opt/rackspace-monitoring-agent:
    - mkdir -p /opt/rackspace-monitoring-agent
    - tar -x -C /opt/rackspace-monitoring-agent -f rackspace-monitoring-agent-container.tar.xz
-3) Drop a valid monitoring agent config in /opt/rackspace-monitoring-agent/etc/rackspace-monitoring-agent.cfg
-4) Set to run under systemd
+3) Create your monitoring agent config
+   - /opt/rackspace-monitoring-agent/usr/bin/rackspace-monitoring-agent  --setup --username YOUR_USERNAME --apikey YOUR_KEY
+4) Move monitoring agent config at /opt/rackspace-monitoring-agent/etc/rackspace-monitoring-agent.conf.d/
+   - mv /etc/rackspace-monitoring-agent.cfg /opt/rackspace-monitoring-agent/etc/rackspace-monitoring-agent.conf.d/
+5) Set to run under systemd
    - cp rackspace-monitoring-agent.service /etc/systemd/system/
    - systemctl enable /etc/systemd/system/rackspace-monitoring-agent.service
    - systemctl start rackspace-monitoring-agent.service
