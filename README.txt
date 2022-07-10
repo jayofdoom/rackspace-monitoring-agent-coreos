@@ -1,3 +1,5 @@
+THIS IS SEVERAL YEARS OLD AND UNMAINTAINED. USE AT YOUR OWN RISK.
+
 This repository is some helper scripts for running the Rackspace Monitoring agent under CoreOS.
 
 Due to the nature of the agent, it shouldn't be run in a Docker container as that will restrict
